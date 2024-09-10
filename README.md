@@ -24,3 +24,34 @@ This addon cannot be sold separately as a standalone product. It is free and mus
 
 ## License
 This project is licensed under the terms described in the LICENSE file.
+
+
+
+/////////////////////////////////////////////////// portuguese ////////////////////////////////////////
+
+# Node Distance Tool para Godot
+
+O Node Distance Tool é um addon para o Godot Engine que permite aos usuários selecionar dois nós 3D e medir a distância entre eles. Ele cria uma linha conectando os nós e exibe a distância medida na cena. Esse addon é útil para desenvolvedores que precisam medir distâncias entre objetos durante o desenvolvimento de jogos ou simulações no Godot.
+
+## Funcionalidades
+- Selecione dois nós 3D e meça a distância entre eles.
+- Visualização de uma linha conectando os dois nós.
+- Exibição da distância arredondada em metros entre os nós.
+- Atalho "Q" para selecionar e medir facilmente.
+- Opção de resetar as medições (remover todas as linhas e labels) com um botão dedicado.
+
+## Como Usar
+1. Instale o addon na sua pasta de addons no projeto Godot.
+2. Ative o addon em "Project > Project Settings > Plugins".
+3. No editor de cena 3D, selecione o primeiro nó e pressione a tecla "Q".
+4. Selecione o segundo nó e pressione "Q" novamente para medir a distância.
+5. Use o botão de reset para remover as linhas e os labels de medição, se necessário.
+
+## Requisitos
+- Godot Engine versão 4.0 ou superior.
+
+## Aviso
+Este addon não pode ser vendido separadamente como um produto individual. Ele é gratuito e deve permanecer gratuito. No entanto, ele pode ser incluído em outros produtos e projetos.
+
+## Licença
+Este projeto está licenciado sob os termos descritos no arquivo LICENSE.
