@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2scun31f2hlw"]
+
+[ext_resource type="Script" path="res://addons/Node-Distance-Tool-7d99ea04379949dc71eeb5dd36a48538e03a2626/metragem.gd" id="1_p53qj"]
+[ext_resource type="FontFile" uid="uid://bqk4qtsao170e" path="res://addons/Node-Distance-Tool-7d99ea04379949dc71eeb5dd36a48538e03a2626/Minecraft.ttf" id="2_vdah1"]
+
+[sub_resource type="FontVariation" id="FontVariation_hv2au"]
+base_font = ExtResource("2_vdah1")
+spacing_top = 5
+
+[node name="MeasureBar" type="VBoxContainer"]
+offset_right = 76.0
+offset_bottom = 33.0
+script = ExtResource("1_p53qj")
+
+[node name="ButtonReset" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+tooltip_text = "- Press Q on a node, then press Q on another node 
+to measure the distance in meters (info in Output). 
+- Click to reset lines and labels."
+theme_override_fonts/font = SubResource("FontVariation_hv2au")
+theme_override_font_sizes/font_size = 16
+text = "Reset Q"
+
+[connection signal="pressed" from="ButtonReset" to="." method="_on_button_reset_pressed"]
