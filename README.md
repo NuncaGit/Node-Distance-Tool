@@ -1,57 +1,38 @@
-# Node Distance Tool for Godot
+Node Distance Tool for Godot
 
-The Node Distance Tool is an addon for Godot Engine that allows users to select two 3D nodes and measure the distance between them. It creates a line connecting the nodes and displays the measured distance in the scene. This addon is useful for developers who need to measure distances between objects during game or simulation development in Godot.
+The Node Distance Tool is an addon that simplifies measuring distances between 3D nodes directly in the Godot editor. Using it, you can select two nodes with the Q key and measure the distance between them, displaying the values directly in the scene and console.
 
-## Features
-- Select two 3D nodes and measure the distance between them.
-- Visualize a line connecting the two nodes.
-- Display the rounded distance in meters between the nodes.
-- Shortcut "Q" for easy selection and measurement.
-- Option to reset measurements (remove all lines and labels) with a dedicated button.
+How It Works
+Quick Selection with "Q": Select a node with the mouse and press Q to register it. Then, select another node and press Q again to measure the distance between them. The distance will be displayed in the scene and the console (print_rich).
 
-## How to Use
-1. Install the addon in your project's addons folder in Godot.
-2. Enable the addon in "Project > Project Settings > Plugins".
-3. In the 3D scene editor, select the first node and press "Q".
-4. Select the second node and press "Q" again to measure the distance.
-5. Use the reset button to remove the measurement lines and labels, if necessary.
+[Space for GIF: Example of a simple measurement using "Q", showing the distance in the console]
 
-## Requirements
-- Godot Engine version 4.0 or higher.
+Measurement Modes
+This addon has three distinct modes for measurement:
 
-## Notice
-This addon cannot be sold separately as a standalone product. It is free and must remain free. However, it can be included and used in other products and projects.
+Normal Mode: Select two nodes with "Q" to measure the distance. It creates a line connecting the nodes and displays a label with the rounded distance. After measuring two nodes, you need to select two more for the next measurement. Ideal for direct, precise measurements, with all calculations displayed in the console.
+
+[Space for GIF: Example of Normal Mode, showing the line and distance between two nodes]
+
+Continuos Mode: After measuring two nodes, the next selected node will automatically be measured in relation to the previous one. This allows for continuous sequences of measurements without resetting.
+
+[Space for GIF: Example of Continuos Mode, automatically measuring between consecutive nodes]
+
+Togheter Mode: Select multiple nodes with "Q", and when any of them move, the distance between all nodes is recalculated and displayed. Previous lines and labels are updated to reflect the new distances. All calculations are displayed in the console.
+
+[Space for GIF: Example of Togheter Mode, recalculating distances when a node is moved]
+
+Control Panel
+In the 3D editor, there is a control panel located in the CONTAINER_SPATIAL_EDITOR_MENU (PainelMetragem) that facilitates activating the modes and visualizing measurements. The buttons include:
+
+Reset: Removes all measurements from the scene.
+Show/Hide Lines and Labels: Toggles the display of lines and labels.
+Continuos and Togheter Modes: Activates or deactivates these modes directly from the panel.
+
+[Space for GIF: Example showing the buttons in the Control Panel]
 
 ## License
 This project is licensed under the terms described in the LICENSE file.
 
 
 
-/////////////////////////////////////////////////// portuguese ////////////////////////////////////////
-
-# Node Distance Tool para Godot
-
-O Node Distance Tool é um addon para o Godot Engine que permite aos usuários selecionar dois nós 3D e medir a distância entre eles. Ele cria uma linha conectando os nós e exibe a distância medida na cena. Esse addon é útil para desenvolvedores que precisam medir distâncias entre objetos durante o desenvolvimento de jogos ou simulações no Godot.
-
-## Funcionalidades
-- Selecione dois nós 3D e meça a distância entre eles.
-- Visualização de uma linha conectando os dois nós.
-- Exibição da distância arredondada em metros entre os nós.
-- Atalho "Q" para selecionar e medir facilmente.
-- Opção de resetar as medições (remover todas as linhas e labels) com um botão dedicado.
-
-## Como Usar
-1. Instale o addon na sua pasta de addons no projeto Godot.
-2. Ative o addon em "Project > Project Settings > Plugins".
-3. No editor de cena 3D, selecione o primeiro nó e pressione a tecla "Q".
-4. Selecione o segundo nó e pressione "Q" novamente para medir a distância.
-5. Use o botão de reset para remover as linhas e os labels de medição, se necessário.
-
-## Requisitos
-- Godot Engine versão 4.0 ou superior.
-
-## Aviso
-Este addon não pode ser vendido separadamente como um produto individual. Ele é gratuito e deve permanecer gratuito. No entanto, ele pode ser incluído em outros produtos e projetos.
-
-## Licença
-Este projeto está licenciado sob os termos descritos no arquivo LICENSE.
