@@ -6,6 +6,7 @@ How It Works
 Quick Selection with "Q": Select a node with the mouse and press Q to register it. Then, select another node and press Q again to measure the distance between them. The distance will be displayed in the scene and the console (print_rich).
 
 [Space for GIF: Example of a simple measurement using "Q", showing the distance in the console]
+!print_rich de GIF
 
 Measurement Modes
 This addon has three distinct modes for measurement:
