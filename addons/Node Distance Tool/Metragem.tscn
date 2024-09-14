@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2scun31f2hlw"]
+
+[ext_resource type="Script" path="res://addons/Node Distance Tool/metragem.gd" id="1_ykjem"]
+[ext_resource type="FontFile" uid="uid://bxnnbgyhrxbbb" path="res://addons/Node Distance Tool/Icon_Font/VCR_OSD_MONO_1.001.ttf" id="2_4y4e1"]
+[ext_resource type="Texture2D" uid="uid://cwyc0mfdil3yx" path="res://addons/Node Distance Tool/Icon_Font/Config_setas.png" id="4_3sn0u"]
+[ext_resource type="Texture2D" uid="uid://bvjkj0jpmm3fj" path="res://addons/Node Distance Tool/Icon_Font/Config_olho.png" id="4_f52ym"]
+[ext_resource type="Texture2D" uid="uid://dr2ww8mingixj" path="res://addons/Node Distance Tool/Icon_Font/Config_Thuge1.png" id="5_vjatd"]
+
+[sub_resource type="FontVariation" id="FontVariation_hv2au"]
+base_font = ExtResource("2_4y4e1")
+
+[node name="MeasureBar" type="HBoxContainer"]
+offset_right = 241.0
+offset_bottom = 31.0
+script = ExtResource("1_ykjem")
+
+[node name="ButtonReset" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+tooltip_text = "- Press Q on a node, then press Q on another node 
+to measure the distance in meters (info in Output). 
+- Click to reset lines and labels."
+theme_override_fonts/font = SubResource("FontVariation_hv2au")
+theme_override_font_sizes/font_size = 16
+text = "Reset Q"
+
+[node name="ButtonConfig" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+tooltip_text = "Node Distance Measurement Plugin Settings."
+theme_override_fonts/font = ExtResource("2_4y4e1")
+text = "≣"
+
+[node name="HBoxConfig" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Button_lines_labels" type="Button" parent="HBoxConfig"]
+texture_filter = 1
+layout_mode = 2
+tooltip_text = "Disables or enables the creation of lines and labels
+and clears existing ones."
+theme_override_colors/icon_normal_color = Color(0.699722, 0.715457, 0.722184, 1)
+theme_override_colors/icon_pressed_color = Color(0.455606, 0.855446, 0.980295, 1)
+theme_override_icons/icon = ExtResource("4_f52ym")
+toggle_mode = true
+button_pressed = true
+
+[node name="Button_Continuos_Mode" type="Button" parent="HBoxConfig"]
+texture_filter = 1
+layout_mode = 2
+tooltip_text = "Continuous Mode: After measuring the distance between two nodes, 
+the last selected node will be reused to measure the next one."
+theme_override_colors/icon_normal_color = Color(0.699722, 0.715457, 0.722184, 1)
+theme_override_colors/icon_pressed_color = Color(0.455606, 0.855446, 0.980295, 1)
+theme_override_icons/icon = ExtResource("4_3sn0u")
+toggle_mode = true
+
+[node name="Button_Togheter_Mode" type="Button" parent="HBoxConfig"]
+texture_filter = 1
+layout_mode = 2
+tooltip_text = "Together Mode: Select two nodes using 'Q' and the tool 
+will continuously update the distance between them as they move."
+theme_override_colors/icon_normal_color = Color(0.699722, 0.715457, 0.722184, 1)
+theme_override_colors/icon_pressed_color = Color(0.455606, 0.855446, 0.980295, 1)
+theme_override_icons/icon = ExtResource("5_vjatd")
+toggle_mode = true
+
+[connection signal="pressed" from="ButtonReset" to="." method="_on_button_reset_pressed"]
+[connection signal="pressed" from="ButtonConfig" to="." method="_on_button_config_pressed"]
+[connection signal="toggled" from="HBoxConfig/Button_lines_labels" to="." method="_on_button_lines_labels_toggled"]
+[connection signal="toggled" from="HBoxConfig/Button_Continuos_Mode" to="." method="_on_button_continuos_mode_toggled"]
+[connection signal="toggled" from="HBoxConfig/Button_Togheter_Mode" to="." method="_on_button_togheter_mode_toggled"]
