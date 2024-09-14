@@ -5,7 +5,8 @@ The Node Distance Tool is an addon that simplifies measuring distances between 3
 How It Works
 Quick Selection with "Q": Select a node with the mouse and press Q to register it. Then, select another node and press Q again to measure the distance between them. The distance will be displayed in the scene and the console (print_rich).
 
-https://github.com/NuncaGit/Node-Distance-Tool/raw/main/addons/Node%20Distance%20Tool/gifs/print_rich.gif
+https://github.com/NuncaGit/Node-Distance-Tool/raw/main/addons/Node%20Distance%20Tool/gifs/print_rich.gif](https://raw.githubusercontent.com/NuncaGit/Node-Distance-Tool/main/addons/Node%20Distance%20Tool/gifs/print_rich.gif
+
 
 Measurement Modes
 This addon has three distinct modes for measurement:
