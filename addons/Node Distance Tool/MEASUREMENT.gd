@@ -163,17 +163,20 @@ func _check_node_movement():
 				var node1 = node_pair[i]
 				for j in range(i + 1, node_pair.size()):
 					var node2 = node_pair[j]
+
+					# Calcula a distância exata
 					var distance = node1.global_transform.origin.distance_to(node2.global_transform.origin)
+					
+					# Arredonda a distância apenas para exibição no label
 					var rounded_distance = "%.2f" % distance
 
-					# Desenha a linha e label novamente entre os nós
+					# Desenha a linha e o label novamente entre os nós
 					draw_line_between_nodes(node1, node2, rounded_distance)
 
-					# Adiciona o print_rich para mostrar a distância entre os nós
-					print_rich("Distance between [color=yellow]" + node1.name + "[/color] and [color=yellow]" + node2.name + "[/color] is [color=cyan]" + rounded_distance + " meters[/color]")
+					# Exibe a distância precisa no print_rich (não arredondada)
+					print_rich("Distance between [color=yellow]" + node1.name + "[/color] and [color=yellow]" + node2.name + "[/color] is [color=cyan]" + str(distance) + " meters[/color]")
 
 			previous_positions = current_positions
-
 
 func reset_togheter_mode():
 	node_pair.clear()
